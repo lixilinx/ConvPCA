@@ -23,11 +23,10 @@ for trial = 1 : 4
     axis('tight'); %axis('off');
     
     % generalized cross-correlation phase transform (GCC-PHAT)
-    X = fft(x, [], 2);
-    r = X(1,:).*conj(X(2,:));
+    r = fft(x(1,:), 2*T).*conj(x(2,:), 2*T); % pad enough zeros
     r = r./abs(r);
     r = ifftshift(ifft(r));
-    r = r(T/2+1-16:T/2+1+16);
+    r = r(T+1-16:T+1+16);
     subplot(4,3,3*trial-1);
     plot([-16:16], r, '.k-'); axis('tight'); set(gca,'YTick',[]); %axis('off');
     if trial==1
