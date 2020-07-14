@@ -23,7 +23,7 @@ for trial = 1 : 4
     axis('tight'); %axis('off');
     
     % generalized cross-correlation phase transform (GCC-PHAT)
-    r = fft(x(1,:), 2*T).*conj(x(2,:), 2*T); % pad enough zeros
+    r = fft(x(1,:), 2*T).*conj(fft(x(2,:), 2*T)); % pad enough zeros
     r = r./abs(r);
     r = ifftshift(ifft(r));
     r = r(T+1-16:T+1+16);
