@@ -10,11 +10,12 @@ It verifies two most import properties of our PCA:
 2) W(z) is approximately (due to finite L) paraunitary.      
 
 ##### demo_ConvPCA_adaptive
-A toy online signal detection demo showing convergence curve and evolution of filter taps. Check [toy.png](https://github.com/lixilinx/ConvPCA/blob/master/toy.png) for results. 
+A toy online signal detection demo showing convergence curve and evolution of filter taps. An LMS like stochastic gradient descent algorithm is used to update the filter coefficients. As shown here, it is possible to recover the original mixing coefficients if they are sparse enough. 
+
+![alt text](https://github.com/lixilinx/ConvPCA/blob/master/toy.png)
 
 ##### demo_delay_estimation
-A Time Difference of Arrival (TDOA) estimation demo. The data are two microphone recordings of a single speech source in a highly reverberant conference room. Convolutional PCA can be used to estimate the two source-to-mic responses. By imposing strong sparsity constraints on W(z), peaks in these two responses can show the TDOA. Comparison results with generalized cross-correlation (GCC), old but still widely used today, is shown as below (the true TDOA is about 12 samples).
-
+A Time Difference of Arrival (TDOA) estimation demo. The data are two microphone recordings of a single speech source in a highly reverberant conference room. Convolutional PCA can be used to estimate the two source-to-mic relative responses. By imposing strong sparsity constraints on W(z), delay gap between the two peaks in these two responses can show the TDOA. Comparison results with generalized cross-correlation (GCC), old but still widely used today, is shown as below (the true TDOA is about 12 sampling periods at 16 KHz sampling rate). The four estimated delays in the order of increasing sample sizes are (7, 11, 12, 11) , (5, 0, 12, 13), and (8, 12, 12, 12) for cross correlation, GCC-PHAT, and convolutional PCA, respectively.
 
 ![alt text](https://github.com/lixilinx/ConvPCA/blob/master/tde.png)
 
