@@ -1,4 +1,4 @@
-# Convolutional PCA
+# [Convolutional PCA](https://ieeexplore.ieee.org/document/9165906)
 A PCA for multiple time series. It looks for a small set of series, whose filtered versions can explain most of the variances of observations. This kind of PCA is known as PCA in the frequency domain, spectral PCA, or dynamic PCA. Existing work solves this problem exclusively in the frequency domain. I reformulated it in the time or z-domain, thus  completely avoiding issues like aliasing inherent to frequency domain processing, and making such PCA more explainable with reasonable decomposition constraints like sparsity.    
 
 Please check the enclosed pdf file for technical details. You need Matlab or Octave to run these demos.
